@@ -12,8 +12,17 @@ class Cek_laundry_model extends CI_Model {
     return $this->db->get()->result();
   }
 
+function cek_transaksi($kode_transaksi){
+     $this->db->select('*');
+    $this->db->from('transaksi');
+    $this->db->where('transaksi.kode_transaksi', $kode_transaksi);
+    return $this->db->get()->row();
+}
 
 
-
+public function adddata($table, $array)
+    {
+        return $this->db->insert($table, $array);
+    }
 
 }

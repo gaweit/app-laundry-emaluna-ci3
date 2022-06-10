@@ -9,27 +9,30 @@
 <body>
 
 <div class="container-fluid">
-  <h3 class="mb-2 text-grey-800"><?= $title; ?></h3>
+ <div class="card-deck">
 
-  <div class="card shadow mb-4">
+  <div class="card">
+  <div class="card-header">
+ <h3 class="title"><?= $form1; ?></h3>
+</div>
     <div class="card-body">
-      <form action="<?= base_url('laporan/cetak_laporan'); ?>" method="post" class="form-user">
+      <form action="<?= base_url('laporan/cetak_laporan_operasional'); ?>" method="post" class="form-user">
         <div class="form-group row">
-          <label for="" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-          <div class="col-sm-4">
+          <label for="" class="col-sm-4 col-form-label">Tanggal Mulai</label>
+          <div class="col-sm-6">
             <input type="date" name="tgl_mulai" class="form-control" required>
           </div>
         </div>
         
         <div class="form-group row">
-          <label for="" class="col-sm-2 col-form-label">Tanggal Akhir</label>
-          <div class="col-sm-4">
+          <label for="" class="col-sm-4 col-form-label">Tanggal Akhir</label>
+          <div class="col-sm-6">
             <input type="date" name="tgl_akhir" class="form-control" required>
           </div>
         </div>
         
         <div class="form-group row">
-          <label for="" class="col-sm-2 col-form-label"></label>
+          <label for="" class="col-sm-4 col-form-label"></label>
           <div class="col-sm-4">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -38,7 +41,39 @@
       </form>
     </div>
   </div>
+
+  <div class="card">
+<div class="card-header">
+ <h3 class="title"><?= $title; ?></h3>
 </div>
-  
+ <div class="card-body">
+      <form action="<?= base_url('laporan/cetak_laporan'); ?>" method="post" class="form-user">
+        <div class="form-group row">
+          <label for="" class="col-sm-4 col-form-label">Tanggal Mulai</label>
+          <div class="col-sm-6">
+            <input type="date" name="tgl_mulai" class="form-control" required>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="" class="col-sm-4 col-form-label">Tanggal Akhir</label>
+          <div class="col-sm-6">
+            <input type="date" name="tgl_akhir" class="form-control" required>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="" class="col-sm-4 col-form-label"></label>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>
 </body>
 </html>

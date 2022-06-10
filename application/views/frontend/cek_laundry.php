@@ -1,3 +1,4 @@
+
 <form action="<?= base_url('cek_laundry') ?>" method="post">
   <div class="container">
     <div class="row my-5">
@@ -10,7 +11,6 @@
     </div>
   </div>
 </form>
-
 <div class="container">
   <table class="table table-bordered table-striped mb-5">
     <thead>
@@ -39,6 +39,10 @@
         else{ ?>
           <tr>
             <td colspan="5" class="bg-danger text-warning">Tidak ada data ditemukan</td>
+          </tr>
+          <tr>
+            
+        <td colspan="5"  align="center"><a href="<?= base_url('cek_laundry/ajukan_pengantaran') ?>">Ajukan Pengantaran</a></td>
           </tr>
 
         <?php }
