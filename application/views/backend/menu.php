@@ -40,6 +40,11 @@
         <i class="fas fa-users"></i><span>Data Konsumen</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('pengajuan'); ?>">
+        <i class="fas fa-users"></i><span>Data Pengajuan</span>
+      </a>
+    </li>
   
     <li class="nav-item">
       <a class="nav-link" href="<?= base_url('paket'); ?>">
