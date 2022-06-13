@@ -8,7 +8,7 @@
 
   <style>
     .bg-menu{
-      background-image: linear-gradient(#1cc88a, #f0bf0f);
+      background-image: linear-gradient(#6495ED, #6495ED);
     }
   </style>
 </head>
