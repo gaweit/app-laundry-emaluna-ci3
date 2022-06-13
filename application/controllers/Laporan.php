@@ -7,7 +7,7 @@ class Laporan extends CI_Controller {
     parent::__construct();
 
     $this->load->library('pdf');
-    $this->load->model('laporan_model');
+    $this->load->model('Laporan_model');
     $this->load->helper('tglIndo_helper');
   }
 
@@ -22,8 +22,15 @@ class Laporan extends CI_Controller {
 
     $tgl_mulai = $this->input->post('tgl_mulai');
     $tgl_akhir = $this->input->post('tgl_akhir');
+<<<<<<< HEAD
     $data['laporan'] = $this->laporan_model->filter_laporan_operasional($tgl_mulai, $tgl_akhir);
   
+=======
+    $data['laporan'] = $this->Laporan_model->filter_laporan($tgl_mulai, $tgl_akhir);
+    $this->session->set_userdata('tgl_mulai', $tgl_mulai);
+    $this->session->set_userdata('tgl_akhir', $tgl_akhir);
+
+>>>>>>> 7d033a4c9be5f454936ee4a4d89e57208cfa4b3a
     $paper_size = 'A4';
     $orientation = 'landscape';
     $html = $this->output->get_output();
@@ -35,7 +42,7 @@ class Laporan extends CI_Controller {
   public function cetak_laporan(){
     $tgl_mulai = $this->input->post('tgl_mulai');
     $tgl_akhir = $this->input->post('tgl_akhir');
-    $data['laporan'] = $this->laporan_model->filter_laporan($tgl_mulai, $tgl_akhir);
+    $data['laporan'] = $this->Laporan_model->filter_laporan($tgl_mulai, $tgl_akhir);
     $this->session->set_userdata('tgl_mulai', $tgl_mulai);
     $this->session->set_userdata('tgl_akhir', $tgl_akhir);
 
