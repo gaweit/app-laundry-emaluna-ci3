@@ -9,7 +9,7 @@ class Pengajuan extends CI_Controller {
   }
    public function index(){
     $data['content'] = 'backend/pengajuan/pengajuan';
-    $data['title'] = 'Data Pengajuan';
+    $data['title'] = 'Data Pengajuan Pengantaran';
     $data['pengajuan'] = $this->pengajuan_model->getAllData();
     $this->load->view('backend/dashboard', $data);
   }
