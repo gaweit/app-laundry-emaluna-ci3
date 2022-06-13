@@ -23,12 +23,10 @@
 <table width="750" border="1" style="border-collapse: collapse;">
   <tr>
     <th>Tanggal masuk</th>
-    <th>Kode Transaksi</th>
-    <th>Konsumen</th>
-    <th>Paket</th>
-    <th>Berat (kg)</th>
-    <th>Grand Total</th>
-    <th>Status</th>
+    <th>Jenis Pengeluaran</th>
+    <th>Nominal Pengeluaran</th>
+    <th>Keterangan</th>
+
   </tr>
 
   public function index()
@@ -56,13 +54,10 @@
 
   <?php foreach($laporan as $row){ ?>
     <tr>
-      <td><?= mediumdate_indo($row->tgl_masuk); ?></td>
-      <td><?= $row->kode_transaksi; ?></td>
-      <td><?= $row->nama_konsumen; ?></td>
-      <td><?= $row->nama_paket; ?></td>
-      <td><?= $row->berat; ?></td>
-      <td>Rp. <?= number_format($row->grand_total, 0, '.', ','); ?>,-</td>
-      <td><?= $row->status; ?></td>
+      <td><?= mediumdate_indo($row->tanggal); ?></td>
+      <td><?= $row->jenis_pengeluaran; ?></td>
+      <td><?= "Rp ".number_format($row->nominal_pengeluaran); ?></td>
+      <td><?= $row->keterangan; ?></td>
     </tr>
   <?php } ?>
 </table>

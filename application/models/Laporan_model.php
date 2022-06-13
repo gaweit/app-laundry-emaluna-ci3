@@ -13,6 +13,14 @@ class Laporan_model extends CI_Model {
     $result =  $this->db->get()->result();
     return $result;
   }
+  function filter_laporan_operasional($tgl_mulai, $tgl_akhir){
+    $this->db->select('*');
+    $this->db->from('pengeluaran');
+    $this->db->where('pengeluaran.tanggal >=', $tgl_mulai);
+    $this->db->where('pengeluaran.tanggal <=', $tgl_akhir);
+    $result =  $this->db->get()->result();
+    return $result;
+  }
 
 
 

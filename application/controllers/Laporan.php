@@ -22,10 +22,8 @@ class Laporan extends CI_Controller {
 
     $tgl_mulai = $this->input->post('tgl_mulai');
     $tgl_akhir = $this->input->post('tgl_akhir');
-    $data['laporan'] = $this->laporan_model->filter_laporan($tgl_mulai, $tgl_akhir);
-    $this->session->set_userdata('tgl_mulai', $tgl_mulai);
-    $this->session->set_userdata('tgl_akhir', $tgl_akhir);
-
+    $data['laporan'] = $this->laporan_model->filter_laporan_operasional($tgl_mulai, $tgl_akhir);
+  
     $paper_size = 'A4';
     $orientation = 'landscape';
     $html = $this->output->get_output();
