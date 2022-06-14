@@ -38,4 +38,36 @@ class Operasional extends CI_Controller {
       redirect('operasional');
     }
   }
+  public function edit($id){
+    $data['content'] = 'backend/operasional/edit_operasional';
+    $data['title'] = 'Form Ubah Operasional';
+    $data['konsumen'] = $this->operasional_model->edit($id);
+    $this->load->view('backend/dashboard', $data);
+  }
+  public function update(){
+
+    $id_pengeluaran =   $this->input->post('id_pengeluaran');
+    $data = array(
+
+      'jenis_pengeluaran'   => $this->input->post('jenis_pengeluaran'),
+      'nominal_pengeluaran'   => $this->input->post('nominal_pengeluaran'),
+      'keterangan' => $this->input->post('keterangan'),
+    );
+
+    $query = $this->operasional_model->update($id_pengeluaran, $data);
+
+    if($query = true){
+      $this->session->set_flashdata('info', 'Data pengeluaran berhasil diupdate');
+      redirect('operasional');
+    }
+  }
+
+  public function delete($id){
+    $query = $this->operasional_model->delete($id);
+    
+    if($query = true){
+      $this->session->set_flashdata('info', 'Data pengeluaran berhasil dihapus');
+      redirect('operasional');
+    }
+  }
 }
