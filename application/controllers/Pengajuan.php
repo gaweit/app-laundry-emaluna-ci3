@@ -13,5 +13,12 @@ class Pengajuan extends CI_Controller {
     $data['pengajuan'] = $this->pengajuan_model->getAllData();
     $this->load->view('backend/dashboard', $data);
   }
-
+public function delete($id){
+    $query = $this->pengajuan_model->delete($id);
+    
+    if($query = true){
+      $this->session->set_flashdata('info', 'Data pengajuan berhasil dihapus');
+      redirect('pengajuan');
+    }
+  }
 }

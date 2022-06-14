@@ -17,4 +17,12 @@ class Pengajuan_model extends CI_Model {
     return $result;
   }
 
+  public function delete($id){
+    $this->db->where('id', $id);
+    $this->db->delete('pengajuan');
+  }
+
+
+
+
 }

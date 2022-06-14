@@ -28,7 +28,7 @@
               <th>No</th>
               <th>No Transaksi</th>
               <th>Tanggal Pengajuan</th>
-      <!--         <th>Opsi</th> -->
+              <th>Opsi</th>
             </tr>
           </thead>
           <tbody>
@@ -39,10 +39,11 @@
               <td><?= $no++; ?></td>
               <td><?= $row->no_transaksi; ?></td>
               <td><?= $row->tanggal_pengajuan; ?></td>
-            <!--   <td>
-                <a href="<?= base_url('konsumen/edit/') . $row->id?>" class="btn btn-success btn-sm">Edit</a>
-                <a href="<?= base_url('konsumen/delete/') . $row->id?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Delete</a>
-              </td> -->
+              <td>
+              <!-- 
+                <a href="<?= base_url('konsumen/edit/') . $row->id?>" class="btn btn-success btn-sm">Edit</a> -->
+                <a href="<?= base_url('pengajuan/delete/') . $row->id?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Delete</a>
+              </td> 
             </tr>
             <?php endforeach; ?>
           </tbody>
