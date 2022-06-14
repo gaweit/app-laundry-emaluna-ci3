@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2022 at 05:17 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.1.24
+-- Waktu pembuatan: 14 Jun 2022 pada 09.15
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about`
+-- Struktur dari tabel `about`
 --
 
 CREATE TABLE `about` (
@@ -36,7 +35,7 @@ CREATE TABLE `about` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `about`
+-- Dumping data untuk tabel `about`
 --
 
 INSERT INTO `about` (`id_about`, `judul_about`, `deskripsi_about`, `gambar_about`) VALUES
@@ -45,7 +44,7 @@ INSERT INTO `about` (`id_about`, `judul_about`, `deskripsi_about`, `gambar_about
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konsumen`
+-- Struktur dari tabel `konsumen`
 --
 
 CREATE TABLE `konsumen` (
@@ -56,7 +55,7 @@ CREATE TABLE `konsumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `konsumen`
+-- Dumping data untuk tabel `konsumen`
 --
 
 INSERT INTO `konsumen` (`kode_konsumen`, `nama_konsumen`, `alamat_konsumen`, `no_telp`) VALUES
@@ -68,7 +67,7 @@ INSERT INTO `konsumen` (`kode_konsumen`, `nama_konsumen`, `alamat_konsumen`, `no
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket`
+-- Struktur dari tabel `paket`
 --
 
 CREATE TABLE `paket` (
@@ -78,7 +77,7 @@ CREATE TABLE `paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `paket`
+-- Dumping data untuk tabel `paket`
 --
 
 INSERT INTO `paket` (`kode_paket`, `nama_paket`, `harga_paket`) VALUES
@@ -90,7 +89,40 @@ INSERT INTO `paket` (`kode_paket`, `nama_paket`, `harga_paket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Struktur dari tabel `pengajuan`
+--
+
+CREATE TABLE `pengajuan` (
+  `id` int(15) NOT NULL,
+  `no_transaksi` varchar(300) NOT NULL,
+  `tanggal_pengajuan` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengeluaran`
+--
+
+CREATE TABLE `pengeluaran` (
+  `id_pengeluaran` int(50) NOT NULL,
+  `jenis_pengeluaran` varchar(15) NOT NULL,
+  `nominal_pengeluaran` varchar(50) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pengeluaran`
+--
+
+INSERT INTO `pengeluaran` (`id_pengeluaran`, `jenis_pengeluaran`, `nominal_pengeluaran`, `keterangan`, `tanggal`) VALUES
+(1, 'test', '10000', 'pengeluaran', '2022-06-13');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `slider`
 --
 
 CREATE TABLE `slider` (
@@ -102,7 +134,7 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slider`
+-- Dumping data untuk tabel `slider`
 --
 
 INSERT INTO `slider` (`id_slider`, `judul_slider`, `deskripsi_slider`, `status_slider`, `gambar_slider`) VALUES
@@ -113,7 +145,7 @@ INSERT INTO `slider` (`id_slider`, `judul_slider`, `deskripsi_slider`, `status_s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -129,7 +161,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`kode_transaksi`, `kode_konsumen`, `kode_paket`, `tgl_masuk`, `tgl_ambil`, `berat`, `grand_total`, `bayar`, `status`) VALUES
@@ -145,7 +177,7 @@ INSERT INTO `transaksi` (`kode_transaksi`, `kode_konsumen`, `kode_paket`, `tgl_m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -155,7 +187,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_user`, `username`, `password`) VALUES
@@ -166,59 +198,83 @@ INSERT INTO `users` (`id_user`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `about`
+-- Indeks untuk tabel `about`
 --
 ALTER TABLE `about`
   ADD PRIMARY KEY (`id_about`);
 
 --
--- Indexes for table `konsumen`
+-- Indeks untuk tabel `konsumen`
 --
 ALTER TABLE `konsumen`
   ADD PRIMARY KEY (`kode_konsumen`);
 
 --
--- Indexes for table `paket`
+-- Indeks untuk tabel `paket`
 --
 ALTER TABLE `paket`
   ADD PRIMARY KEY (`kode_paket`);
 
 --
--- Indexes for table `slider`
+-- Indeks untuk tabel `pengajuan`
+--
+ALTER TABLE `pengajuan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pengeluaran`
+--
+ALTER TABLE `pengeluaran`
+  ADD PRIMARY KEY (`id_pengeluaran`);
+
+--
+-- Indeks untuk tabel `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id_slider`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kode_transaksi`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `about`
+-- AUTO_INCREMENT untuk tabel `about`
 --
 ALTER TABLE `about`
   MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `slider`
+-- AUTO_INCREMENT untuk tabel `pengajuan`
+--
+ALTER TABLE `pengajuan`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengeluaran`
+--
+ALTER TABLE `pengeluaran`
+  MODIFY `id_pengeluaran` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

@@ -65,6 +65,11 @@
     </li>
   
     <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('operasional'); ?>">
+        <i class="fas fa-file-alt"></i><span>Data Operasional</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="<?= base_url('laporan'); ?>">
         <i class="fas fa-file-alt"></i><span>Laporan</span>
       </a>
