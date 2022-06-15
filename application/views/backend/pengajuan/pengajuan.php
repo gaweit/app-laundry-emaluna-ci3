@@ -28,6 +28,7 @@
               <th>No</th>
               <th>No Transaksi</th>
               <th>Tanggal Pengajuan</th>
+              <th>Status</th>
               <th>Opsi</th>
             </tr>
           </thead>
@@ -39,10 +40,12 @@
               <td><?= $no++; ?></td>
               <td><?= $row->no_transaksi; ?></td>
               <td><?= $row->tanggal_pengajuan; ?></td>
+              <td><?= $row->status; ?></td>
+              
               <td>
-              <!-- 
-                <a href="<?= base_url('konsumen/edit/') . $row->id?>" class="btn btn-success btn-sm">Edit</a> -->
-                <a href="<?= base_url('pengajuan/delete/') . $row->id?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Delete</a>
+                
+                <a href="<?= base_url('pengajuan/edit/') . $row->id?>" class="btn btn-success btn-sm">Konfirmasi</a>  
+                <a href="<?= base_url('pengajuan/delete/') . $row->id?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Tolak Pengantaran</a>
               </td> 
             </tr>
             <?php endforeach; ?>

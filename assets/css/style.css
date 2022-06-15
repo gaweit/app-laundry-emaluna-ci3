@@ -1,5 +1,5 @@
 .bg-navbar{
-  background-image: linear-gradient(#c70909, #f0bf0f);
+  background-image: linear-gradient(blue , blue);
 }
 
 .image-slider{
@@ -7,7 +7,7 @@
 }
 
 .btn-slider{
-  background-image: linear-gradient(#c70909, #f0bf0f);
+  background-image: linear-gradient(blue, blue);
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -32,7 +32,7 @@ h5{
 }
 
 .th-color{
-  background-color: orange;
+  background-color: blue;
 }
 
 .footer{

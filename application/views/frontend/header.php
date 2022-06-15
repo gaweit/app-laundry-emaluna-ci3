@@ -27,8 +27,11 @@
           <li class="nav-item active">
             <a class="nav-link" href="<?= base_url('home') ?>">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item_center">
+          <li class="nav-item active">
             <a class="nav-link" href="<?= base_url('cek_laundry') ?>">Cek Status Laundry</a>
+          </li>
+          <li class="nav-item inactive">
+            <a target="_blank" class="nav-link" href="<?= base_url('login') ?>">Login Admin</a>
           </li>
         </ul>
       </div>

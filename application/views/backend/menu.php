@@ -42,7 +42,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<?= base_url('pengajuan'); ?>">
-        <i class="fas fa-users"></i><span>Data Pengajuan</span>
+        <i class="fas fa-users"></i><span>Pengajuan Pengantaran</span>
       </a>
     </li>
   

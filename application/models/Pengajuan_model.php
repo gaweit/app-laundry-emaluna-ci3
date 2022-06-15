@@ -22,6 +22,18 @@ class Pengajuan_model extends CI_Model {
     $this->db->delete('pengajuan');
   }
 
+  public function edit($id){
+    $this->db->select('*');
+    $this->db->from('pengajuan');
+    $this->db->where('id', $id);
+    return $this->db->get()->row_array();
+  } 
+
+  public function update($pengajuan, $data){
+    $this->db->where('id', $id);
+    $this->db->update('pengajuan', $data);
+  }
+
 
 
 
